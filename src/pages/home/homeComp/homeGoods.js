@@ -47,7 +47,31 @@ export default class HomeGoods extends Component {
                           })  
                         }
                     </div>
-                   :<div></div>
+                   :<div>
+                    {
+                        data.items.map((v,i) => {
+                            return <div key={v.gid}>
+                                {
+                                    i >= 1 ? 
+                                    <div className="home_GoodsBoyTop">
+                                        <dl>
+                                            <dd>
+                                            <p> {v.title}</p>
+                                            <p> 精品挑选 </p>
+                                            </dd>
+                                            <dt><img src={v.image} /></dt>
+                                        </dl>
+                                    </div>
+                                    :<div>
+                                        <p>{v.title}</p>
+                                        <p><img src={v.image} /></p>
+                                        <p>{v.price}</p>
+                                    </div>
+                                }
+                                </div>
+                        })  
+                    }
+                   </div>
                }
             </div>
         )
